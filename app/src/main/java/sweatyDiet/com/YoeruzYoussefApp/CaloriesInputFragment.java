@@ -19,7 +19,7 @@ public class CaloriesInputFragment extends Fragment {
     }
 
     private void enterAmountOfCalories() {
-        EditText numberOfCal = (EditText) getView().findViewById(R.id.amount_calories_input);
+        EditText numberOfCal = (EditText) getView().findViewById(R.id.cal_intake);
         numberOfCal.setOnClickListener(v -> enterAmountOfCalories());
 
     }
