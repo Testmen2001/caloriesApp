@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">YoeruzYoussefApp</string>
+    <string name="textview_today">Date today:</string>
+    <string name="Please_enter_your_Calories_intake">Please enter your Calories intake</string>
+    <string name="Calculate_Cal">Calculate Cal</string>
+</resources>
