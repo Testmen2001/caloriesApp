@@ -35,6 +35,13 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        TextView totalSumCalories = (TextView) view.findViewById(R.id.total_sum_cals_intake);
+        MainActivity activity = (MainActivity)getActivity();
+        assert activity != null;
+        int totalCalories = activity.getTotalConsumedCalories();
+        totalSumCalories.setText(totalCalories +"");
+
         Button button = (Button) view.findViewById(R.id.button);
         button.setOnClickListener(v -> navigateToCaloriesInput());
         setDateOfToday(view);

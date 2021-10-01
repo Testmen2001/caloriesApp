@@ -5,14 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/martrix"
-        tools:layout_editor_absoluteX="0dp" />
-
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
@@ -41,10 +33,24 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.022" />
 
-    <androidx.constraintlayout.helper.widget.Layer
-        android:id="@+id/layer"
+    <TextView
+        android:id="@+id/total_cals_consumed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="date_textview" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:text="Total calories consumed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_textview" />
+
+    <TextView
+        android:id="@+id/total_sum_cals_intake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:hint="0"
+        app:layout_constraintBottom_toTopOf="@+id/total_cals_consumed"
+        app:layout_constraintEnd_toEndOf="@+id/total_cals_consumed"
+        app:layout_constraintStart_toStartOf="@+id/total_cals_consumed" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

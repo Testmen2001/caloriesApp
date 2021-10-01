@@ -18,6 +18,10 @@ import androidx.fragment.app.FragmentContainerView;
 
 public class MainActivity extends AppCompatActivity {
 
+
+
+    private int totalConsumedCalories = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,5 +29,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public int getTotalConsumedCalories() {
+        return totalConsumedCalories;
+    }
 
+    void onConsumedCaloriesEntered(int inputCalories) {
+        totalConsumedCalories += inputCalories;
+    }
 }
