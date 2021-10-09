@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class CaloriesInputFragment extends Fragment {
 
@@ -33,12 +34,21 @@ public class CaloriesInputFragment extends Fragment {
         numberOfCals.setOnClickListener(v -> saveConsumedCalories());
     }
 
+    /* 1. Cap on max number of calories.
+       2. Mandatory field otherwise alert message
+     */
     private void saveConsumedCalories() {
-        int consumedCalories = Integer.parseInt(calsInputField.getText().toString()); // Make this one not crash!!!!!!!!
-        MainActivity activity = (MainActivity)getActivity();
-        assert activity != null;
-        activity.onConsumedCaloriesEntered(consumedCalories);
-        activity.getSupportFragmentManager().popBackStack();
+        String consumedCaloriesString = calsInputField.getText().toString();
+        if (consumedCaloriesString.equals("")) {
+            Toast.makeText(getContext(),"Please enter a value!", Toast.LENGTH_SHORT ).show();
+
+        } else {
+            int consumedCalories = Integer.parseInt(consumedCaloriesString);
+            MainActivity activity = (MainActivity) getActivity();
+            assert activity != null;
+            activity.onConsumedCaloriesEntered(consumedCalories);
+            activity.getSupportFragmentManager().popBackStack();
+        }
 
     }
 }
