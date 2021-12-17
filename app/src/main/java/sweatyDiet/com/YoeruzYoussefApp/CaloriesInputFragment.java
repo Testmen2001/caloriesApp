@@ -40,8 +40,8 @@ public class CaloriesInputFragment extends Fragment {
     private void saveConsumedCalories() {
         String consumedCaloriesString = calsInputField.getText().toString();
         if (consumedCaloriesString.equals("")) {
-            Toast.makeText(getContext(),"Please enter a value!", Toast.LENGTH_SHORT ).show();
-
+            Toast toast= Toast.makeText(getContext(),"Please enter a value!", Toast.LENGTH_SHORT );
+                toast.show();
         } else {
             int consumedCalories = Integer.parseInt(consumedCaloriesString);
             MainActivity activity = (MainActivity) getActivity();

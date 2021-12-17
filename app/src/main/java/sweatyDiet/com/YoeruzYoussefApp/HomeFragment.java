@@ -36,6 +36,8 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+
+
         TextView totalSumCalories = (TextView) view.findViewById(R.id.total_sum_cals_intake);
         MainActivity activity = (MainActivity)getActivity();
         assert activity != null;

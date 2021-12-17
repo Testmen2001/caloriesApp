@@ -13,27 +13,32 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+
 import androidx.fragment.app.FragmentContainerView;
+import androidx.lifecycle.ViewModelProvider;
 
 
 public class MainActivity extends AppCompatActivity {
 
+// TODO fix lost data on configration change!!
 
+    private MainActivityViewModel mainActivityViewModel;
 
-    private int totalConsumedCalories = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mainActivityViewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
     }
+
 
     public int getTotalConsumedCalories() {
-        return totalConsumedCalories;
+        return mainActivityViewModel.getCalories();
     }
 
-    void onConsumedCaloriesEntered(int inputCalories) {
-        totalConsumedCalories += inputCalories;
+    public void onConsumedCaloriesEntered(int consumedCalories) {
+        mainActivityViewModel.onConsumedCaloriesEntered(consumedCalories);
     }
 }
